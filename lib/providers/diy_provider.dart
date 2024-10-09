@@ -7,7 +7,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import "package:cloud_firestore/cloud_firestore.dart";
 import 'package:tuncecomadmin/models/product_model.dart';
 import 'package:tuncecomadmin/services/my_app_functions.dart';
-import 'package:tuncecomadmin/widgets/product_tile.dart';
 import 'package:uuid/uuid.dart';
 
 class DIYProvider extends ChangeNotifier {

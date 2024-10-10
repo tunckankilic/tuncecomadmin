@@ -6,6 +6,7 @@ import '../models/product_model.dart';
 class ProductsProvider with ChangeNotifier {
   List<ProductModel> productListSearch = [];
   List<ProductModel> products = [];
+
   List<ProductModel> get getProducts {
     return products;
   }
@@ -41,6 +42,7 @@ class ProductsProvider with ChangeNotifier {
   }
 
   final productDb = FirebaseFirestore.instance.collection("products");
+
   Future<List<ProductModel>> fetchProducts() async {
     try {
       await productDb
@@ -48,7 +50,6 @@ class ProductsProvider with ChangeNotifier {
           .get()
           .then((productSnapshot) {
         products.clear();
-        // products = []
         for (var element in productSnapshot.docs) {
           products.insert(0, ProductModel.fromFirestore(element));
         }
@@ -64,7 +65,6 @@ class ProductsProvider with ChangeNotifier {
     try {
       return productDb.snapshots().map((snapshot) {
         products.clear();
-        // products = []
         for (var element in snapshot.docs) {
           products.insert(0, ProductModel.fromFirestore(element));
         }

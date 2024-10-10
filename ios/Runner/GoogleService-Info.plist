@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyC1JFbeQNTcb29taY1IyF9-Gpodpua22SI</string>
+	<string>AIzaSyBvA_Iq55eOjeoWG8XeJRO-Pv5MrpH_nPo</string>
 	<key>GCM_SENDER_ID</key>
-	<string>726449475349</string>
+	<string>240134785611</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>site.tunckankilic.tuncecomadmin</string>
 	<key>PROJECT_ID</key>
-	<string>tuncecom2</string>
+	<string>tkecom</string>
 	<key>STORAGE_BUCKET</key>
-	<string>tuncecom2.appspot.com</string>
+	<string>tkecom.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:726449475349:ios:ec7dbce8d6a3f760df631c</string>
+	<string>1:240134785611:ios:3fe3284f2adb8c27515bce</string>
 </dict>
 </plist>

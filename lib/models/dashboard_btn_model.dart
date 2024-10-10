@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tuncecomadmin/screens/diy_screen.dart';
+import 'package:tuncecomadmin/screens/diy/diy_screen.dart';
+import 'package:tuncecomadmin/screens/diy/diy_list.dart';
 
 import '../screens/edit_upload_product_form.dart';
 import '../screens/inner_screen/orders/orders_screen.dart';
@@ -42,7 +43,7 @@ class DashboardButtonsModel {
           text: "DIY Panel",
           imagePath: AssetsManager.diy,
           onPressed: () {
-            Navigator.pushNamed(context, DIYPanel.routeName);
+            Navigator.pushNamed(context, DIYListPage.routeName);
           },
         ),
       ];

@@ -24,10 +24,7 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
@@ -52,12 +49,20 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyDfG1yl1uXXRgNI2QtbW9ZO6y4JV7SErB4',
+    appId: '1:240134785611:android:2996eebddcee9613515bce',
+    messagingSenderId: '240134785611',
+    projectId: 'tkecom',
+    storageBucket: 'tkecom.appspot.com',
+  );
+
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC1JFbeQNTcb29taY1IyF9-Gpodpua22SI',
-    appId: '1:726449475349:ios:ec7dbce8d6a3f760df631c',
-    messagingSenderId: '726449475349',
-    projectId: 'tuncecom2',
-    storageBucket: 'tuncecom2.appspot.com',
+    apiKey: 'AIzaSyBvA_Iq55eOjeoWG8XeJRO-Pv5MrpH_nPo',
+    appId: '1:240134785611:ios:3fe3284f2adb8c27515bce',
+    messagingSenderId: '240134785611',
+    projectId: 'tkecom',
+    storageBucket: 'tkecom.appspot.com',
     iosBundleId: 'site.tunckankilic.tuncecomadmin',
   );
 }

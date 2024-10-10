@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import "package:cloud_firestore/cloud_firestore.dart";
+import 'package:tuncecomadmin/models/diy_panel.dart';
 import 'package:tuncecomadmin/models/product_model.dart';
 import 'package:tuncecomadmin/services/my_app_functions.dart';
 import 'package:uuid/uuid.dart';
@@ -272,6 +273,42 @@ class DIYProvider extends ChangeNotifier {
       } finally {
         setLoading(false);
       }
+    }
+  }
+
+  Future<List<DIYPanelClass>> fetchDIYs() async {
+    try {
+      final QuerySnapshot querySnapshot =
+          await FirebaseFirestore.instance.collection('diyCollection').get();
+
+      return querySnapshot.docs.map((doc) {
+        final data = doc.data() as Map<String, dynamic>;
+        return DIYPanelClass(
+          id: doc.id,
+          title: data['title'] ?? '',
+          description: data['description'] ?? '',
+          imagePath: data['imagePath'] ?? '',
+          steps:
+              (data['steps'] as List?)?.map((e) => e.toString()).toList() ?? [],
+          price: (data['price'] as num?)?.toDouble() ?? 0.0,
+        );
+      }).toList();
+    } catch (error) {
+      print('Error fetching DIYs: $error');
+      return [];
+    }
+  }
+
+  Future<void> deleteDIY(String id) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('diyCollection')
+          .doc(id)
+          .delete();
+      notifyListeners();
+    } catch (error) {
+      print('Error deleting DIY: $error');
+      throw error; // Hata yönetimi için hatayı yeniden fırlatıyoruz
     }
   }
 }
